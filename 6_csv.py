@@ -6,13 +6,24 @@ with open(path, mode) as moj_plik:
 print(content)
 
 for i in range(len(content)):
+    content[i] = content[i].replace('\n','',1)
     content[i] = content[i].split(',')
 print(content)
 print(content[3])
 print(content[3][2])   #pierwszy index - wiersz, drugi index - kolumna
 print(content[0][2][3:-2])    #3ci indeks, znaki stringa
 
-#string.replace('\n','')
+#ile kobiet na macierzynskim
+licznik = 0
+for i in range(len(content)):
+    if content[i][4] == 't' and content[i][3] == 'k':
+        licznik += 1
+
+print('Liczba kobiet na naciezynkim =',licznik)
+
+# for i in range(len(content)):
+#     content[i][4] = content[i][4].replace('\n','',1)
+
 
 print('\n\n')
 #przykład replace
